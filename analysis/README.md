@@ -2,6 +2,11 @@
 
 Note: all shell commands/scripts should be run from the main directory (the one above this one), unless otherwise indicated.
 
+## Pre-requirements
+
+- Python ≥3.10
+- Python module venv (included in Python except on Debian/Ubuntu/etc)
+
 ## Setup
 
 <!-- 0. Fill in `config/.env.template` and save it as `.env` in the main directory -->
@@ -35,6 +40,18 @@ ln -s config/.vscode
 ```
 
 Go to extensions and install the recommended extensions.
+
+## Reproducing the analysis
+
+To execute any modules after inputs or code have changed, run
+```
+dvc repro
+```
+
+To reproduce the entire analysis, run
+```
+dvc repro --force
+```
 
 ## Adding/updating python requirements
 

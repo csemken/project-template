@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  test_iris:
+    cmd: python -m analysis.test_iris.test_iris
+    deps:
+    - path: analysis/test_iris/test_iris.py
+      hash: md5
+      md5: 3762e2c4948b58d51f6b5565b2337ea1
+      size: 562
+    - path: data/input/test_iris/
+      hash: md5
+      md5: 0a518a5f9db7b7051ab6ccbdea2cced4.dir
+      size: 4551
+      nfiles: 1
