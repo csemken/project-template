@@ -1,0 +1,21 @@
+name: Build LaTeX document
+on: [pull_request]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Checkout git repository
+        uses: actions/checkout@v3
+      - name: 👷 Build LaTeX documents
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: "paper_slides/"
+          root_file: "*.tex"
+          glob_root_file: true
+          latexmk_use_xelatex: true
+      - name: ⬆️ Upload PDF files
+        uses: actions/upload-artifact@v3
+        with:
+          name: latex_pdfs
+          path: paper_slides/*.pdf
