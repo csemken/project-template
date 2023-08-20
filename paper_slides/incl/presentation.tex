@@ -1,0 +1,89 @@
+\ifdefined\presmode{
+  \if \presmode h
+    \documentclass[handout,table,british,aspectratio=169]{beamer}  % share
+  \else
+    \documentclass[twocolumn,british]{article} \usepackage{beamerarticle}   % draft
+  \fi
+\else
+  \documentclass[table,british,aspectratio=169,10pt]{beamer}  % present
+\fi
+
+
+%% Packages
+\usepackage{mathtools,geometry,graphicx,caption,xcolor,setspace,comment,pdflscape,subfig,hyperref,array,float,booktabs,cleveref,colortbl,tabularx}
+\usepackage[backposition=title]{beamerappendixnote}
+% Allow for unicode characters
+\usepackage{fontspec, unicode-math}
+
+%% Layout
+\mode<presentation> {
+  \usetheme{Frankfurt}
+  \usecolortheme{default}  % beaver, dove, default, seahorse
+  \setbeamercolor{section in head/foot}{fg=black, bg=white}
+  \setbeamercolor{frametitle}{bg=white, fg=black}
+  \usefonttheme{default}
+  \useinnertheme{circles}  % clean bullets
+  \setbeamertemplate{navigation symbols}{}
+  %\setbeamertemplate{caption}[numbered]
+  \setbeamertemplate{section in toc}[sections numbered]
+  % \setbeamertemplate{theorems}[numbered]
+  % Links
+  \hypersetup{colorlinks,citecolor=blue,linkcolor=.,urlcolor=blue}
+  % Font sizes
+  \setsansfont{DejaVu Sans}
+  \setbeamerfont{footnote}{size=\tiny}
+  % Captions
+  \captionsetup{labelformat=empty}
+  \DeclareCaptionFormat{empty}{}
+  %\captionsetup{format=empty}
+  % Remove subtitle
+  \setbeamertemplate{frametitle}{\insertframetitle}
+  \setbeamercovered{transparent}
+  % Footer
+  \setbeamertemplate{footline}{%
+    \vspace{0.05cm}
+    \color{gray}
+    \parbox{.33\paperwidth}{
+      \hspace{0.15cm}
+      \insertshorttitle
+    }
+    \parbox{.33\paperwidth}{
+      \centering
+      % christoph.semken@upf.edu
+    }
+    \parbox{.33\paperwidth}{
+      \raggedleft
+      \insertframenumber
+      \hspace{0.15cm}
+    }
+    \vspace{0.05cm}
+  }
+}
+\mode<article>{
+    \usepackage{parskip}
+    % Font
+    \setmainfont{TeX Gyre Pagella}
+    % Links
+    \hypersetup{colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue}
+    % Do not use skips
+    \setlength{\bigskipamount}{0pt}
+  \setlength{\medskipamount}{0pt}
+}
+% Tables
+\setlength\extrarowheight{1pt}
+\renewcommand{\arraystretch}{1}
+% Paragraph spacing
+%\setlength{\parskip}{\baselineskip}
+% Alerts
+\setbeamercolor{alerted text}{fg=blue}
+% Dates
+\usepackage{isodate} \cleanlookdateon
+% Diagrams
+%\usepackage{smartdiagram}
+%\usesmartdiagramlibrary{additions}
+%\usetikzlibrary{decorations.pathreplacing}
+
+%% Bibliography
+\usepackage[backend=biber,style=authoryear-comp,isbn=false,eprint=false,maxcitenames=2,maxbibnames=5,uniquelist=false]{biblatex}
+% Font size in biliography
+\renewcommand*{\bibfont}{\small}

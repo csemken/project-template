@@ -1,0 +1,49 @@
+\documentclass[a4paper,british,12pt]{article}
+
+% draft mode
+\newif\ifdraft
+\draftfalse
+
+%% Packages
+\usepackage[table]{xcolor}
+\usepackage{babel,mathtools,amsthm,graphicx,caption,setspace,pdflscape,hyperref,array,float,enumerate,csquotes,booktabs,pdfpages,longtable}
+% Allow for unicode characters
+\usepackage{fontspec}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+
+%% Layout
+% Wider margins
+\usepackage{fullpage}
+% Line spacing
+\doublespacing
+% Paragraph spacing
+%\usepackage{parskip}
+% Links
+\hypersetup{colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue}
+% Font
+\setmainfont{TeX Gyre Pagella}
+% Tables (needs pkg array)
+%\setlength\extrarowheight{4pt}
+% References
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+% Narrow captions
+\usepackage[margin=1cm]{caption}
+\usepackage{subcaption}
+% Dates
+\usepackage{isodate} \cleanlookdateon
+% Diagrams
+\usepackage{smartdiagram}
+\usesmartdiagramlibrary{additions}
+\usetikzlibrary{decorations.pathreplacing}
+% Figures
+\setcounter{topnumber}{1}
+% Floats: position at top
+\makeatletter
+\renewcommand*{\fps@figure}{t}
+\renewcommand*{\fps@table}{t}
+\makeatother
+
+%% Bibliography
+\usepackage[backend=biber,style=authoryear,isbn=false,eprint=false,date=year,maxcitenames=2,maxbibnames=50,uniquelist=false]{biblatex}
+% Font size in biliography
+\renewcommand*{\bibfont}{\tiny}
