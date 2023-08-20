@@ -8,6 +8,7 @@ To use it:
 1. Create a fork of the repository
 2. Adjust this README and the wiki
 3. Update the dvc remote in `.dvc/config` and push existing files
+4. Remove test data and module
 
 ## File structure
 
