@@ -17,10 +17,10 @@ fi
 source .venv/bin/activate
 
 # add to dvc
-dvc add -q analysis/**/*.ipynb
+dvc add -q ./**/*.ipynb
 
 # sync
-out=$(jupytext --to py --use-source-timestamp analysis/**/*.ipynb)
+out=$(jupytext --to py --use-source-timestamp ./**/*.ipynb)
 set +e
 changed=$(echo "$out" | grep -P '^\[jupytext\] Updating')
 set -e

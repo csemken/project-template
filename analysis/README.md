@@ -69,6 +69,8 @@ source .venv/bin/activate && pip-compile --upgrade config/requirements.in && pip
 
 Jupyter notebooks (`.ipynb` files) should be tracked with DVC, since they contain results and can be large. To track changes to the code of the notebook, we convert it into a plain python file using [jupytext](https://jupytext.readthedocs.io/).
 
-After creating a new python notebook run `bin/add-notebook.sh` (which executes `jupytext --set-formats ipynb,auto notebook.ipynb` and `dvc add notebook.ipynb`).
+After creating a new python notebook run `bin/add-notebook.sh notebook.ipynb` where `notebook.ipynb` is the notebook’s path.
+This will create the jupytext representation (`jupytext --set-formats ipynb,auto notebook.ipynb`) and add the notebook to DVC (`dvc add notebook.ipynb`)).
 
-To update jupytext files, run `jupytext --to auto analysis/**/*.ipynb` (which executes `jupytext --to py --use-source-timestamp analysis/**/*.ipynb` and `dvc add -q analysis/**/*.ipynb`).
+To update jupytext files, run `bin/update-notebooks.sh`.
+This updates all jupytext representations (`jupytext --to py --use-source-timestamp ./**/*.ipynb`) and adds the current notebooks to DVC (`dvc add ./**/*.ipynb`).
