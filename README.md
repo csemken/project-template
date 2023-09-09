@@ -6,9 +6,10 @@ This is a reusable project template.
 To use it:
 
 1. Create a fork of the repository
-2. Adjust this README and the wiki
-3. Update the dvc remote in `.dvc/config` and push existing files
-4. Remove test data and module
+2. To use the automatic building of PDF files, go to Settings → Actions
+3. Adjust this README and the wiki
+4. Update the dvc remote in `.dvc/config` and push existing files
+5. Remove test data and module
 
 ## File structure
 
