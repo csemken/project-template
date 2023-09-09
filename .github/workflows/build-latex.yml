@@ -1,8 +1,14 @@
-name: Build LaTeX document
+name: Build LaTeX documents
 on: [pull_request]
+
+env:
+  REPO_URL: ${{ github.server_url }}/${{ github.repository_owner }}/${{ github.event.repository.name }}
 
 jobs:
   build_latex:
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Checkout git repository
@@ -19,3 +25,30 @@ jobs:
         with:
           name: latex_pdfs
           path: paper_slides/*.pdf
+      # post comment
+      - name: 🔎 Find comment
+        uses: peter-evans/find-comment@v2
+        id: fc
+        with:
+          issue-number: ${{ github.event.number }}
+          comment-author: 'github-actions[bot]'
+        if: always()
+      - name: 💬 Post comment (success)
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ github.event.number }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            ✔ Successfully built latex files for commit ${{ github.sha }} by @${{ github.event.sender.login }}.<br>
+            [**Click here**](${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}), then `latex_pdfs`, to download your results.
+      - name: 💬 Post comment (failure)
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ github.event.number }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            ✘ Failed to build latex files for commit ${{ github.sha }} by @${{ github.event.sender.login }}.<br>
+            [**Click here**](${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}) to see the build log.
+        if: failure()
