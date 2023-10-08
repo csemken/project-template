@@ -16,10 +16,11 @@ Note: all shell commands/scripts should be run from the main directory (the one 
 python3 -m venv .venv
 ```
 
-2. Install the requirements:
+2. Install required python modules.
 ```shell
 source .venv/bin/activate
-pip3 install -r config/requirements.txt
+pip3 install --disable-pip-version-check wheel
+pip3 install --disable-pip-version-check -r config/requirements.txt
 ```
 
 3. Get data files using [dvc](https://dvc.org/). This requires you to authenticate with a Google account that has access to our dvc Google Drive folder.
@@ -27,7 +28,7 @@ pip3 install -r config/requirements.txt
 dvc pull
 ```
 
-(On a server, open the authentication URL on a PC, follow the instructions, copy the URL and run `cd /tmp && wget <URL>` in a different terminal on the server.)
+(On a server, open the authentication URL on a PC, follow the instructions, copy the URL and run `curl <URL>` in a different terminal on the server.)
 
 4. (Optional) Install the [pre-commit](https://pre-commit.com/) git hooks. This will automatically run linters before `git commit`. It will also install the dvc hooks, which automatically run `dvc checkout` and `dvc push` after `git checkout` and before `git push`, respectively.
 ```shell
