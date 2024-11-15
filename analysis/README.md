@@ -35,13 +35,6 @@ dvc pull
 pre-commit install --hook-type pre-push --hook-type post-checkout --hook-type pre-commit
 ```
 
-4. (Optional) Use VScode configuration, by creating a symlink:
-```shell
-ln -s config/.vscode
-```
-
-Go to extensions and install the recommended extensions.
-
 ## Reproducing the analysis
 
 To execute any modules after inputs or code have changed, run

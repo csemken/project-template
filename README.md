@@ -17,7 +17,6 @@ To use it:
 analysis       # code for data analysis
 └── *          # module
 bin            # maintenance scripts
-config         # configuration files
 data           # data
 ├── raw        # raw input data
 │   └── *      # source
