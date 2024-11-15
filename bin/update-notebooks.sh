@@ -3,19 +3,6 @@
 set -euo pipefail
 shopt -s globstar
 
-if [ ! -d ".venv" ]; then
-    echo "Warning: folder .venv/ not found, skipping update"
-    exit 0
-fi
-
-if [ ! -f ".venv/bin/jupytext" ]; then
-    echo "Warning: jupytext not found in .venv/, skipping update"
-    exit 0
-fi
-
-# activate Python venv
-source .venv/bin/activate
-
 # add to dvc
 dvc add -q ./**/*.ipynb
 

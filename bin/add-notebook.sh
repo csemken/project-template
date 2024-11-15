@@ -13,13 +13,6 @@ set -euxo pipefail
 # first argument = file name
 FILE=$1
 
-# activate Python venv
-if [ ! -d ".venv" ]; then
-    echo "Folder .venv/ not found"
-    exit 1
-fi
-set +x && source .venv/bin/activate && set -x
-
 # create notebook if it does not exist
 if [ ! -f "$FILE" ]; then
     echo $EMPTY_IPNB > $FILE
