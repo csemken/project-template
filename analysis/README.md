@@ -4,37 +4,38 @@ Note: all shell commands/scripts should be run from the main directory (the one 
 
 ## Pre-requirements
 
-- Python ≥3.10
-- Python module venv (included in Python except on Debian/Ubuntu/etc)
+- [Conda](https://docs.anaconda.com/miniconda/miniconda-install/)
 
 ## Setup
 
 <!-- 0. Fill in `config/.env.template` and save it as `.env` in the main directory -->
 
-1. Create a [virtual environment](https://docs.python.org/3/library/venv.html):
+1. Create the conda environment and install all required packages:
 ```shell
-python3 -m venv .venv
+conda env create --prefix .conda --file environment.lock.yml
+conda activate ./.conda
 ```
 
-2. Install the requirements:
+Optionally, shorten the conda prompt name:
 ```shell
-source .venv/bin/activate
-pip3 install -r config/requirements.txt
+conda config --set env_prompt '({name}) '
+conda deactivate
+conda activate ./.conda
 ```
 
-3. Get data files using [dvc](https://dvc.org/). This requires you to authenticate with a Google account that has access to our dvc Google Drive folder.
+2. Get data files using [dvc](https://dvc.org/). This requires you to authenticate with a Google account that has access to our dvc Google Drive folder.
 ```shell
 dvc pull
 ```
 
 (On a server, open the authentication URL on a PC, follow the instructions, copy the URL and run `cd /tmp && wget <URL>` in a different terminal on the server.)
 
-4. (Optional) Install the [pre-commit](https://pre-commit.com/) git hooks. This will automatically run linters before `git commit`. It will also install the dvc hooks, which automatically run `dvc checkout` and `dvc push` after `git checkout` and before `git push`, respectively.
+3. (Optional) Install the [pre-commit](https://pre-commit.com/) git hooks. This will automatically run linters before `git commit`. It will also install the dvc hooks, which automatically run `dvc checkout` and `dvc push` after `git checkout` and before `git push`, respectively.
 ```shell
 pre-commit install --hook-type pre-push --hook-type post-checkout --hook-type pre-commit
 ```
 
-5. (Optional) Use VScode configuration, by creating a symlink:
+4. (Optional) Use VScode configuration, by creating a symlink:
 ```shell
 ln -s config/.vscode
 ```
@@ -53,16 +54,18 @@ To reproduce the entire analysis, run
 dvc repro --force
 ```
 
-## Adding/updating python requirements
+## Add/update software
 
-Add required packages to `config/requirements.in`. To install new requirements use:
+Add required conda/pip packages to `environment.yml`. To install them use:
 ```shell
-source .venv/bin/activate && pip-compile config/requirements.in && pip-sync config/requirements.txt
+conda install [package]
+conda env export --no-build --prefix ./.conda | sed -e '1d;$d' -e '/^  - defaults$/s/  - defaults/  - nodefaults/' > environment.lock.yml
 ```
 
-To update requirements use:
+To update all packages use:
 ```shell
-source .venv/bin/activate && pip-compile --upgrade config/requirements.in && pip-sync config/requirements.txt
+conda env update --prune --prefix .conda --file environment.yml
+conda env export --no-build --prefix ./.conda | sed -e '1d;$d' -e '/^  - defaults$/s/  - defaults/  - nodefaults/' > environment.lock.yml
 ```
 
 ## Working with jupyter notebooks

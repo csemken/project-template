@@ -1,0 +1,19 @@
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python
+  - pip
+  - pip:
+    # analysis
+    - numpy
+    - pandas[parquet]
+    - plotly
+    # development
+    - dvc[gdrive]==3.2.2
+    - ipykernel
+    - black
+    - nbconvert
+    - jupyter_contrib_nbextensions
+    - pre-commit
+    - jupytext

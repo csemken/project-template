@@ -3,9 +3,12 @@
 .env
 /.vscode
 
+# Conda
+
+.conda
+
 # Python
 
-.venv
 __pycache__/
 *.py[cod]
 *$py.class
