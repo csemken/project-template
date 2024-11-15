@@ -1,6 +1,5 @@
 [core]
     remote = gdrive-upf
     analytics = false
-    autostage = true
 ['remote "gdrive-upf"']
     url = gdrive://1Jp72ywaO-GdtLKRT7-_FpfA0r_TntK2L
