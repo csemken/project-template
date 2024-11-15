@@ -25,7 +25,6 @@ data           # data
 └── release    # publication output
     └── *      # module
 paper_slides   # tex code
-└── *          # manually created assets
 ```
 
 ## Getting started

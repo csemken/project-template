@@ -1,0 +1,11 @@
+\makeatletter
+\@ifclassloaded{article}{
+  \newtheorem{lemma}{Lemma}[section]
+  \newtheorem{theorem}{Theorem}[section]
+}{}
+\makeatother
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+%% Autofilling values
+\input{../data/release/test_iris/autofilling.tex}
