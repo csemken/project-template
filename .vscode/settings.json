@@ -4,5 +4,14 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "jupyter.notebookFileRoot": "${workspaceFolder}"
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "r.rpath.linux": ".conda/bin/R",
+    "r.rpath.mac": ".conda/bin/R",
+    "r.rpath.windows": ".conda\\bin\\R.exe",
+    "r.rterm.linux": ".conda/bin/R",
+    "r.rterm.mac": ".conda/bin/R",
+    "r.rterm.windows": ".conda\\bin\\R.exe",
+    "[r]": {
+        "editor.defaultFormatter": "REditorSupport.r"
+    }
 }

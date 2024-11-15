@@ -17,3 +17,11 @@ dependencies:
     - jupyter_contrib_nbextensions
     - pre-commit
     - jupytext
+  - r
+  # analysis R
+  - r-tidyverse
+  - r-arrow
+  - r-yaml
+  # development R
+  - r-IRkernel
+  - r-languageserver
