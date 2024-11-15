@@ -13,5 +13,12 @@
     "r.rterm.windows": ".conda\\bin\\R.exe",
     "[r]": {
         "editor.defaultFormatter": "REditorSupport.r"
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/.dvc/cache/**": true,
+        "**/.dvc/tmp/**": true,
+        "**/.conda/**": true,
     }
 }
