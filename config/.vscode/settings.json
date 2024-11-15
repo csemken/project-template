@@ -1,4 +1,8 @@
 {
-    "python.formatting.provider": "black",
-    "python.terminal.activateEnvironment": true
+    "python.terminal.activateEnvironment": true,
+    "python.defaultInterpreterPath": ".conda/bin/python",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "jupyter.notebookFileRoot": "${workspaceFolder}"
 }
