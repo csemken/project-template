@@ -13,7 +13,9 @@ def main() -> int:
     )
 
     # save number of observations as autofilling value
-    Path("data/release/test_iris.tex").write_text(
+    release_folder = Path("data/release/test_iris/")
+    release_folder.mkdir(exist_ok=True)
+    (release_folder / "autofilling.tex").write_text(
         rf"\newcommand{{\irisobs}}{{\textnormal{{{len(df_iris)}}}}}"
     )
 

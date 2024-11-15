@@ -23,6 +23,7 @@ data           # data
 ├── output     # output data
 │   └── *      # module
 └── release    # publication output
+    └── *      # module
 paper_slides   # tex code
 └── *          # manually created assets
 ```

@@ -6,7 +6,7 @@ stages:
     deps:
       - analysis/test_iris/test_iris.py
       - data/raw/test_iris/
-    # no output data; autofilling values are already tracked by git
-    # outs:
-    #   - data/output/test_iris/
-    #   - data/release/test_iris.tex
+    outs:
+      # - data/output/test_iris/
+      - data/release/test_iris/:
+          cache: false
