@@ -9,18 +9,7 @@ To use it:
 2. Adjust this README and the wiki
 3. Update the dvc remote in `.dvc/config` and push existing files
 4. Remove test data and module
-5. (Optional) Enable the automatic synchronization with a LaTeX/overleaf mirror repo:
-    1. Create a mirror repo on GitHub (e.g., project-template-latex), ticking the box “Add a README file” to create an initial commit
-    3. Generate and save an access token for the mirror repo: (Account) Settings → Developer Settings → Personal access token → Generate new token
-        - Expiration → select date far in future
-        - Only selected repositories → Select the new mirror repo
-        - Permissions → Contents: Read and write
-    4. Set two secrets in the main (i.e., this) repo: (Repository) Settings → Secrets and variables → Actions → New repository secret
-        1. LATEX_REPOSITORY: `your_mirror_repo` (e.g., csemken/project-template-latex)
-        2. LATEX_TOKEN: `your_token` (e.g, github_pat_...)
-    5. Make a change and push it to the main repo
-    6. Import the project on overleaf: New project → Import from GitHub → `your_mirror_repo` → Import to Overleaf
-    7. Set the main document: Menu → Main document → paper.tex
+5. (Optional) Import the project on overleaf (New project → Import from GitHub → `repo_name` → Import to Overleaf) and set the main document (Menu → Main document → paper_slides/paper.tex)
 
 ## File structure
 
