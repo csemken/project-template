@@ -5,7 +5,7 @@ stages:
     cmd: python -m analysis.test_iris.test_iris
     deps:
       - analysis/test_iris/test_iris.py
-      - data/input/test_iris/
+      - data/raw/test_iris/
     # no output data; autofilling values are already tracked by git
     # outs:
     #   - data/output/test_iris/

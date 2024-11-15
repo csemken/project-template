@@ -7,8 +7,8 @@ stages:
       hash: md5
       md5: 3762e2c4948b58d51f6b5565b2337ea1
       size: 562
-    - path: data/input/test_iris/
+    - path: data/raw/test_iris/
       hash: md5
-      md5: 0a518a5f9db7b7051ab6ccbdea2cced4.dir
-      size: 4551
-      nfiles: 1
+      md5: f1bcbd83c42364ff418ef91e16599e52.dir
+      size: 4664
+      nfiles: 3

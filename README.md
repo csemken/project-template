@@ -20,8 +20,6 @@ bin            # maintenance scripts
 data           # data
 ├── raw        # raw input data
 │   └── *      # source
-├── input      # input data
-│   └── *      # module
 ├── output     # output data
 │   └── *      # module
 └── release    # publication output
