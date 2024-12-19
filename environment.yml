@@ -10,7 +10,6 @@ dependencies:
     - pandas[parquet]
     - plotly
     # development
-    - dvc[gdrive]==3.56.0
     - ipykernel
     - black
     - nbconvert
