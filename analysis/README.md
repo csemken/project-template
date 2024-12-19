@@ -23,13 +23,6 @@ conda deactivate
 conda activate ./.conda
 ```
 
-2. Get data files using [dvc](https://dvc.org/). This requires you to authenticate with a Google account that has access to our dvc Google Drive folder.
-```shell
-dvc pull
-```
-
-(On a server, open the authentication URL on a PC, follow the instructions, copy the URL and run `cd /tmp && wget <URL>` in a different terminal on the server.)
-
 ## Add/update software
 
 Add required conda/pip packages to `environment.yml`. To install them use:
