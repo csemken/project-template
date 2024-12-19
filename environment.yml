@@ -17,7 +17,6 @@ dependencies:
     - nbconvert
     - notebook<7  # newest version is incompatible with nbconvert
     - jupyter_contrib_nbextensions
-    - pre-commit
     - jupytext
   - r
   # analysis R

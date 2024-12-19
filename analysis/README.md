@@ -35,11 +35,6 @@ R -e "IRkernel::installspec()"
 Rscript -e 'install.packages("vscDebugger", repos = "https://manuelhentschel.r-universe.dev")'
 ```
 
-4. (Optional) Install the [pre-commit](https://pre-commit.com/) git hooks. This will automatically run linters before `git commit`. It will also install the dvc hooks, which automatically run `dvc checkout` and `dvc push` after `git checkout` and before `git push`, respectively.
-```shell
-pre-commit install --hook-type pre-push --hook-type post-checkout --hook-type pre-commit
-```
-
 ## Reproducing the analysis
 
 To execute any modules after inputs or code have changed, run
