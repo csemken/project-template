@@ -30,23 +30,6 @@ dvc pull
 
 (On a server, open the authentication URL on a PC, follow the instructions, copy the URL and run `cd /tmp && wget <URL>` in a different terminal on the server.)
 
-3. (Optional) Install the [pre-commit](https://pre-commit.com/) git hooks. This will automatically run linters before `git commit`. It will also install the dvc hooks, which automatically run `dvc checkout` and `dvc push` after `git checkout` and before `git push`, respectively.
-```shell
-pre-commit install --hook-type pre-push --hook-type post-checkout --hook-type pre-commit
-```
-
-## Reproducing the analysis
-
-To execute any modules after inputs or code have changed, run
-```
-dvc repro
-```
-
-To reproduce the entire analysis, run
-```
-dvc repro --force
-```
-
 ## Add/update software
 
 Add required conda/pip packages to `environment.yml`. To install them use:
