@@ -3,9 +3,6 @@
 set -euo pipefail
 shopt -s globstar
 
-# add to dvc
-dvc add -q ./**/*.ipynb
-
 # sync
 out=$(jupytext --to py --use-source-timestamp ./**/*.ipynb)
 set +e
