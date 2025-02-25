@@ -8,19 +8,9 @@ dependencies:
     # analysis
     - numpy
     - pandas[parquet]
-    - plotly
     # development
     - ipykernel
     - black
     - nbconvert
     - jupyter_contrib_nbextensions
-    - pre-commit
     - jupytext
-  - r
-  # analysis R
-  - r-tidyverse
-  - r-arrow
-  - r-yaml
-  # development R
-  - r-IRkernel
-  - r-languageserver
