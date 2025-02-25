@@ -2,14 +2,12 @@ channels:
   - conda-forge
   - nodefaults
 dependencies:
-  - google-cloud-sdk
   - python
   - pip
   - pip:
     # analysis
     - numpy
     - pandas[parquet]
-    - plotly
     # development
     - dvc[gs]==3.56.0
     - ipykernel
@@ -18,11 +16,3 @@ dependencies:
     - notebook<7  # newest version is incompatible with nbconvert
     - jupyter_contrib_nbextensions
     - jupytext
-  - r
-  # analysis R
-  - r-tidyverse
-  - r-arrow
-  - r-yaml
-  # development R
-  - r-IRkernel
-  - r-languageserver
