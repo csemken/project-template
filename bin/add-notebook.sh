@@ -20,6 +20,3 @@ fi
 
 # set jupytext format, create paired file
 jupytext --set-formats ipynb,py "$FILE"
-
-# track file with dvc
-dvc add "$FILE"
