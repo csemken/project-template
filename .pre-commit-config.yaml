@@ -10,18 +10,18 @@ repos:
   hooks:
   - id: dvc-pre-commit
     language_version: python3
-    additional_dependencies: ['.[gdrive]']
+    additional_dependencies: ['.[gs]']
     stages:
     - pre-commit
   - id: dvc-pre-push
     language_version: python3
-    additional_dependencies: ['.[gdrive]']
+    additional_dependencies: ['.[gs]']
     stages:
     - pre-push
     verbose: true
   - id: dvc-post-checkout
     language_version: python3
-    additional_dependencies: ['.[gdrive]']
+    additional_dependencies: ['.[gs]']
     stages:
     - post-checkout
     always_run: true

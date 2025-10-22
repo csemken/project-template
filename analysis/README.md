@@ -23,12 +23,11 @@ conda deactivate
 conda activate ./.conda
 ```
 
-2. Get data files using [dvc](https://dvc.org/). This requires you to authenticate with a Google account that has access to our dvc Google Drive folder.
+3. Get data files using [dvc](https://dvc.org/). This requires you to authenticate with a Google account that has access to the GCP service account below, which is used to access our GCP storage bucket.
 ```shell
+gcloud auth application-default login --impersonate-service-account="cs-dvc@csemken.iam.gserviceaccount.com"
 dvc pull
 ```
-
-(On a server, open the authentication URL on a PC, follow the instructions, copy the URL and run `cd /tmp && wget <URL>` in a different terminal on the server.)
 
 3. (Optional) Install the [pre-commit](https://pre-commit.com/) git hooks. This will automatically run linters before `git commit`. It will also install the dvc hooks, which automatically run `dvc checkout` and `dvc push` after `git checkout` and before `git push`, respectively.
 ```shell

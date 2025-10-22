@@ -2,6 +2,7 @@ channels:
   - conda-forge
   - nodefaults
 dependencies:
+  - google-cloud-sdk
   - python
   - pip
   - pip:
@@ -10,7 +11,7 @@ dependencies:
     - pandas[parquet]
     - plotly
     # development
-    - dvc[gdrive]==3.56.0
+    - dvc[gs]==3.56.0
     - ipykernel
     - black
     - nbconvert
