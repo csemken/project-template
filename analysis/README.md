@@ -50,7 +50,7 @@ dvc repro --force
 
 Add required conda/pip packages to `environment.yml`. To install them use:
 ```shell
-conda install [package]
+conda install -c conda-forge --override-channels [package]
 conda env export --no-build --prefix ./.conda | sed -e '1d;$d' -e '/^  - defaults$/s/  - defaults/  - nodefaults/' > environment.lock.yml
 ```
 
