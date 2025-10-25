@@ -29,7 +29,13 @@ gcloud auth application-default login --impersonate-service-account="cs-dvc@csem
 dvc pull
 ```
 
-3. (Optional) Install the [pre-commit](https://pre-commit.com/) git hooks. This will automatically run linters before `git commit`. It will also install the dvc hooks, which automatically run `dvc checkout` and `dvc push` after `git checkout` and before `git push`, respectively.
+3. Set up R environment
+```shell
+R -e "IRkernel::installspec()"
+Rscript -e 'install.packages("vscDebugger", repos = "https://manuelhentschel.r-universe.dev")'
+```
+
+4. (Optional) Install the [pre-commit](https://pre-commit.com/) git hooks. This will automatically run linters before `git commit`. It will also install the dvc hooks, which automatically run `dvc checkout` and `dvc push` after `git checkout` and before `git push`, respectively.
 ```shell
 pre-commit install --hook-type pre-push --hook-type post-checkout --hook-type pre-commit
 ```
