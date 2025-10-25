@@ -23,7 +23,7 @@ conda deactivate
 conda activate ./.conda
 ```
 
-3. Get data files using [dvc](https://dvc.org/). This requires you to authenticate with a Google account that has access to the GCP service account below, which is used to access our GCP storage bucket.
+2. Get data files using [dvc](https://dvc.org/). This requires you to authenticate with a Google account that has access to the GCP service account below, which is used to access our GCP storage bucket.
 ```shell
 gcloud auth application-default login --impersonate-service-account="cs-dvc@csemken.iam.gserviceaccount.com"
 dvc pull
