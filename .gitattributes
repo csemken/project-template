@@ -1,5 +1,1 @@
-*.ipynb -text
-data/**/*.html -text
-data/**/*.css -text
-data/**/*.js -text
-
+*.ipynb binary
