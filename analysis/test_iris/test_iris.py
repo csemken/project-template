@@ -4,6 +4,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from analysis import utils
+
 
 def main() -> int:
     # load data
@@ -15,8 +17,11 @@ def main() -> int:
     # save number of observations as autofilling value
     release_folder = Path("data/release/test_iris/")
     release_folder.mkdir(exist_ok=True)
+    autofilling = {
+        "iris_obs": len(df_iris),
+    }
     (release_folder / "autofilling.tex").write_text(
-        rf"\newcommand{{\irisobs}}{{\textnormal{{{len(df_iris)}}}}}"
+        utils.dict_to_autofilling_values(autofilling)
     )
 
 

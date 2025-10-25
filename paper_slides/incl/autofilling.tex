@@ -1,0 +1,9 @@
+\usepackage{expl3}
+\ExplSyntaxOn
+\prop_new:N \varProp
+\input{../data/release/test_iris/autofilling.tex}
+\NewDocumentCommand{\var}{m}
+{
+  \prop_item:Nn \varProp {#1}
+}
+\ExplSyntaxOff
