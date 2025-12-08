@@ -1,16 +1,16 @@
 {
     "python.terminal.activateEnvironment": true,
-    "python.defaultInterpreterPath": ".conda/bin/python",
+    "python.defaultInterpreterPath": ".pixi/envs/default/bin/python",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "jupyter.notebookFileRoot": "${workspaceFolder}",
-    "r.rpath.linux": ".conda/bin/R",
-    "r.rpath.mac": ".conda/bin/R",
-    "r.rpath.windows": ".conda\\bin\\R.exe",
-    "r.rterm.linux": "${workspaceFolder}/.conda/bin/R",
-    "r.rterm.mac": "${workspaceFolder}/.conda/bin/R",
-    "r.rterm.windows": "${workspaceFolder}\\.conda\\bin\\R.exe",
+    "r.rpath.linux": ".pixi/envs/default/bin/R",
+    "r.rpath.mac": ".pixi/envs/default/bin/R",
+    "r.rpath.windows": ".pixi\\envs\\default\\bin\\R.exe",
+    "r.rterm.linux": "${workspaceFolder}/.pixi/envs/default/bin/R",
+    "r.rterm.mac": "${workspaceFolder}/.pixi/envs/default/bin/R",
+    "r.rterm.windows": "${workspaceFolder}\\.pixi\\envs\\default\\bin\\R.exe",
     "[r]": {
         "editor.defaultFormatter": "REditorSupport.r"
     },
@@ -20,5 +20,6 @@
         "**/.dvc/cache/**": true,
         "**/.dvc/tmp/**": true,
         "**/.conda/**": true,
+        "**/.pixi/**": true
     }
 }

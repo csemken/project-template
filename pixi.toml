@@ -1,0 +1,32 @@
+[workspace]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tasks]
+
+[dependencies]
+google-cloud-sdk = "*"
+python = "*"
+r = "*"
+# python analysis
+numpy = "*"
+pandas = "*"
+pyarrow = "*"
+plotly = "*"
+# python development
+dvc = "==3.56.0"
+dvc-gs = "*"
+ipykernel = "*"
+black = "*"
+nbconvert = "*"
+notebook = "<7"
+jupyter_contrib_nbextensions = "*"
+pre-commit = "*"
+jupytext = "*"
+# R analysis
+r-tidyverse = "*"
+r-arrow = "*"
+r-yaml = "*"
+# R development
+r-irkernel = "*"
+r-languageserver = "*"
